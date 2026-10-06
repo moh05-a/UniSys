@@ -27,6 +27,7 @@ namespace UniversityApi.Controllers
                 Id = s.Id,
                 Name = s.Name,
                 Major = s.Major,
+                GPA = s.GPA,
                 EnrolledSubjectNames = s.EnrolledSubjects
                     .Where(sub => sub.Name != null)
                     .Select(sub => sub.Name!)
@@ -60,12 +61,25 @@ namespace UniversityApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudent(int id, Student student)
-        {
-            if (id != student.Id) return BadRequest();
-            await _studentRepository.UpdateStudentAsync(student);
-            return NoContent();
-        }
+public async Task<IActionResult> PutStudent(
+    int id,
+    StudentUpdateDto dto)
+{
+    var student = await _studentRepository.GetStudentByIdAsync(id);
+
+    if (student == null)
+    {
+        return NotFound();
+    }
+
+    student.Name = dto.Name;
+    student.Major = dto.Major;
+    student.GPA = dto.GPA;
+
+    await _studentRepository.UpdateStudentAsync(student);
+
+    return NoContent();
+}
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStudent(int id)

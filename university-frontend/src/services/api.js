@@ -36,3 +36,17 @@ export async function deleteStudent(id){
   }
 
 }
+
+export async function updateStudent(id, student) {
+  const response = await fetch(`${API_URL}/api/Students/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(student)
+  })
+
+  if (!response.ok) {
+    throw new Error('Failed to update student')
+  }
+}
