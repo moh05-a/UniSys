@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\unisys\UniSys.csproj" />
+    <ProjectReference Include="..\UniSys\UniSys.csproj" />
   </ItemGroup>
 
 </Project>

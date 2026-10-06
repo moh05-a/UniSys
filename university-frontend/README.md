@@ -10,7 +10,7 @@
 
 <p align="center">
 A clean, fast <strong>React + Vite</strong> admin dashboard for the
-<a href="../unisys"><strong>UniSys API</strong></a>, used to manage
+<a href="../UniSys"><strong>UniSys API</strong></a>, used to manage
 <strong>students</strong>, <strong>tutors</strong>, and <strong>subjects</strong> from the browser.
 </p>
 
@@ -115,13 +115,13 @@ university-frontend
 ### ✅ Prerequisites
 
 - [Node.js](https://nodejs.org/) **18+** and npm
-- The [UniSys API](../unisys) running locally on `http://localhost:5137`
+- The [UniSys API](../UniSys) running locally on `http://localhost:5137`
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/moh05-a/uni-system-api.git
-cd uni-system-api/university-frontend
+git clone https://github.com/moh05-a/UniSys.git
+cd UniSys/university-frontend
 ```
 
 ### 2. Install dependencies
@@ -132,10 +132,10 @@ npm install
 
 ### 3. Start the backend
 
-In a separate terminal, run the API (see the [backend README](../unisys/README.md)):
+In a separate terminal, run the API (see the [backend README](../UniSys/README.md)):
 
 ```bash
-cd ../unisys
+cd ../UniSys
 dotnet run
 ```
 
@@ -211,7 +211,7 @@ Example request body:
 
 | Project | Description |
 |---------|-------------|
-| [**UniSys API**](../unisys) | ASP.NET Core backend · PostgreSQL · RabbitMQ |
+| [**UniSys API**](../UniSys) | ASP.NET Core backend · PostgreSQL · RabbitMQ |
 | [**Unit Tests**](../UniSys.UnitTests) | Unit tests for services & controllers |
 | [**Integration Tests**](../UniSys.IntegrationTests) | End-to-end API tests |
 
